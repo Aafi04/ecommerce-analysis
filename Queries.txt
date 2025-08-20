@@ -1,0 +1,39 @@
+Delivery Time (Days) = DATEDIFF(olist_orders_dataset[order_purchase_timestamp], olist_orders_dataset[order_delivered_customer_date], DAY)
+
+-----------
+
+Order Status Group = IF(olist_orders_dataset[order_status] = "delivered", "Completed", "Incomplete")
+
+-----------
+
+On-Time Status = IF(
+    NOT ISBLANK(olist_orders_dataset[order_delivered_customer_date]),
+    IF(
+        olist_orders_dataset[order_delivered_customer_date] <= olist_orders_dataset[order_estimated_delivery_date], 
+        "On-Time", 
+        "Late"
+    ),
+    "In Transit"
+)
+
+-----------
+
+Estimated Delivery Time (Days) = DATEDIFF(olist_orders_dataset[order_purchase_timestamp], olist_orders_dataset[order_estimated_delivery_date], DAY)
+
+-----------
+
+Total Revenue = SUM(olist_order_items_dataset[price])
+
+-----------
+
+Average Delivery Time = AVERAGE(olist_orders_dataset[Delivery Time (Days)])
+
+-----------
+
+On-Time Delivery % = 
+VAR OnTimeOrders = CALCULATE(COUNTROWS(olist_orders_dataset), olist_orders_dataset[On-Time Status] = "On-Time")
+VAR TotalDeliveredOrders = CALCULATE(COUNTROWS(olist_orders_dataset), olist_orders_dataset[order_status] = "delivered")
+RETURN
+DIVIDE(OnTimeOrders, TotalDeliveredOrders)
+
+-----------
