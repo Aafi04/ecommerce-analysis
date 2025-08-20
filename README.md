@@ -6,10 +6,11 @@ This repository contains the Power BI project file, documentation, and resources
 
 ## 📊 Dashboard Preview
 
-- **Page 1:** Sales & Orders Overview
-- **Page 2:** Seller & Logistics Performance
+- **Page 1:** Sales & Orders Overview  
+  ![Sales & Orders Overview](https://drive.google.com/uc?export=view&id=1rh-_AezLYKKjGU0fyNXhNRb8yLGG3BTq)
 
-> _Note: Upload your dashboard images to a service like Imgur and replace the placeholder links above with your actual image URLs._
+- **Page 2:** Seller & Logistics Performance  
+  ![Seller & Logistics Performance](https://drive.google.com/uc?export=view&id=1Ndccb001hHtRW0vcVcPH3pGahKBtSxaQ)
 
 ---
 
@@ -146,4 +147,4 @@ As a Business Intelligence Analyst, the primary objective was to design and deve
 ## 👨‍💻 Author & Acknowledgments
 
 - **Author:** Mohd Aafi
-- **Mentorship:** Mr. Santhosh Baskar (GUVI & HCL Data
+- **Mentorship:** Mr. Santhosh Baskar (GUVI & HCL)
